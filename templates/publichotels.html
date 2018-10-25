@@ -1,0 +1,16 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<div>
+	<h1 style="text-align:center;margin-bottom: 20px;">Hotel Catalog</h1>
+</div>
+{% for hotel in hotels %}
+<div class="container-fluid">
+	<div class="list-group">
+		<a href="{{url_for('showInfo',hotel_id=hotel.id)}}" class="list-group-item">
+			<h4>{{hotel.name}}</h4>
+		</a>
+	</div>
+</div>
+{% endfor %}
+{% endblock %}

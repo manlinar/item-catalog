@@ -1,0 +1,81 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class="container-fluid">
+	<div class="row banner menu">
+		<div class="col-md-11 col-md-offset-1 padding-none">
+			<h1>{{ hotel.name }}
+				<figure class="creator">
+					<img src="{{ creator.picture}}">
+					<div class="padding-bottom"></div>
+					<figcaption>{{ creator.name }}</figcaption>
+				</figure>
+			</h1>
+		</div>
+	</div>
+</div>
+{% if info !=[] %}
+<div class="row">
+	<div class="col-md-1"></div>
+	<div class="col-md-3">
+		<h2>Single Room</h2>
+		{% for i in info %}
+		{% if i.category == 'Single Room' %}
+		<div class="info-room">
+			<h3>{{i.name}}</h3>
+			<p>{{i.description}}</p>
+			<p class="room-price">${{i.price}}</p>
+		</div>
+		{% endif %}
+		{% endfor %}
+		<h2> Four Bed Room</h2>
+		{% for i in info %}
+		{% if i.category == 'Four Bed Room' %}
+		<div class="info-room">
+			<h3>{{i.name}}</h3>
+			<p>{{i.description}}</p>
+			<p class="room-price">${{i.price}}</p>
+		</div>
+		{% endif %}
+		{% endfor %}
+	</div>
+	<div class="col-md-4">
+		<h2>Double Room</h2>
+		{% for i in info %}
+		{% if i.category == 'Double Room' %}
+		<div class="info-room">
+			<h3>{{i.name}}</h3>
+			<p>{{i.description}}</p>
+			<p class="room-price">${{i.price}}</p>
+		</div>
+		{% endif %}
+		{% endfor %}
+		<h2>Suite</h2>
+		{% for i in info %}
+		{% if i.category == 'Suite' %}
+		<div class="info-room">
+			<h3>{{i.name}}</h3>
+			<p>{{i.description}}</p>
+			<p class="room-price">${{i.price}}</p>
+		</div>
+		{% endif %}
+		{% endfor %}
+	</div>
+	<div class="col-md-3">
+		<h2>Triple Room</h2>
+		{% for i in info %}
+		{% if i.category == 'Triple Room' %}
+		<div class="info-room">
+			<h3>{{i.name}}</h3>
+			<p>{{i.description}}</p>
+			<p class="room-price">${{i.price}}</p>
+		</div>
+		{% endif %}
+		{% endfor %}
+	</div>
+	<div class="col-md-1"></div>
+</div>
+{% endif %}
+<div class="padding-bottom"></div>
+<div class="footer">Created by: {{creator.email}}</div>
+{% endblock %}

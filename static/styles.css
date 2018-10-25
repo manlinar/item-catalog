@@ -1,0 +1,102 @@
+* {
+	font-family: Helvetica, Arial, sans-serif;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 50px;
+	color: #352c28;
+	line-height: 2.0;
+	font-weight: 600;
+}
+
+h2 {
+	font-size: 25px;
+	color: #352c28;
+	line-height: 1.5;
+}
+
+h3 {
+	font-size: 18px;
+	color: #352c28;
+	line-height: 1.1;
+}
+
+p {
+	font-size: 16px;
+	color: #352c28; 
+	line-height: 1.1;
+	font-weight: 300;
+}
+
+ strong {
+ 	font-size: 16px;
+ 	color: #7B7573;
+ 	line-height: 24px;
+ }
+
+.padding-top {
+	padding-top: 30px;
+}
+
+.padding-bottom {
+	padding-bottom: 30px;
+}
+
+.padding-none {
+	padding: 0;
+}
+
+.glyphicon {
+	margin-right: 10px;
+}
+
+.banner.menu {
+	height: 200px;
+	background-color: rgb(180,180,180);
+}
+
+.banner h1 {
+	margin: 45px 0;
+}
+
+.info-room {
+	background-color: rgb(230, 237, 229);
+	padding: 20px;
+	margin: 20px;
+	margin-left: -20px;
+}
+
+.room-price {
+	font-weight: 700;
+}
+
+.creator {
+	padding-right: 20px;
+	margin-top: -20px;
+	text-align: right;
+	float:right;
+}
+
+.creator img {
+	width: 100px;
+	border-radius: 25%;
+}
+
+.creator figcaption {
+	font-size: 14px;
+	color: #7B7573;
+	font-weight: 400;
+	margin-top: -20px;
+}
+
+.flash {
+	background-color: rgb(192, 205, 206);
+	width:100%;
+	text-decoration: none;
+}
+
+.flash li {
+	list-style-type: none;
+	text-align: center;
+}

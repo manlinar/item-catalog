@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class="container-fluid">
+	<div class="row banner menu">
+		<div class="col-md-11 col-md-offset-1 padding-none">
+			<h1>Delete Hotel</h1>
+		</div>
+	</div>
+	<h2 class="padding-top"> Are you sure you want to delete {{hotel.name}}? </h2>
+	<div class="row">
+		<div class="col-md-1">
+			<form action="{{url_for('deleteHotel',hotel_id = hotel.id)}}" method = 'POST'>
+				<button type="submit" class="btn btn-default" id="submit" type="submit">
+					<strong><span class="glyphicon glyphicon-trash" aria-hidden = "true"></span> Delete</strong>
+				</button>
+			</form>
+		</div>
+		<div class="col-md-1">
+			<form action="{{url_for('showInfo',hotel_id=hotel.id,info_id=info_id)}}">
+				<button  class="btn btn-default">
+					<strong><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Cancel</strong>
+				</button>
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock %}

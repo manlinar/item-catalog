@@ -1,0 +1,32 @@
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<ul class="nav navbar-nav">
+			<a href="{{url_for('showHotels')}}" class="btn btn-default navbar-btn" role="button">
+				<strong><span class="glyphicon glyphicon-home"></span> Hotel Catalog</strong>
+			</a>
+			<a href="{{url_for('newHotel')}}" class="btn btn-default navbar-btn" role="button">
+				<strong><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add a new Hotel</strong>
+			</a>
+			<a href="{{url_for('editHotel', hotel_id = hotel.id )}}" class="btn btn-default navbar-btn" role="button">
+				<strong><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Edit Hotel name</strong>
+			</a>
+			<a href="{{url_for('newHotelInfo', hotel_id = hotel.id )}}" class="btn btn-default navbar-btn" role="button">
+				<strong><span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add Information to this Hotel</strong>
+			</a>
+			<a href="{{url_for('deleteHotel', hotel_id = hotel.id )}}" class="btn btn-default navbar-btn" role="button">
+				<strong><span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Delete Hotel</strong>
+			</a>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+			{%if 'username' not in session %}
+			<a href="{{url_for('showLogin')}}" class="btn btn-default navbar-btn" role="button">
+				<strong><span class="glyphicon glyphicon-log-in"></span> Login</strong>
+			</a>
+			{% else %}
+			<a href="{{url_for('disconnect')}}" class="btn btn-default navbar-btn" role="button">
+				<strong><span class="glyphicon glyphicon-log-out"></span> Logout</strong>
+			</a>
+			{% endif %}
+		</ul>
+	</div>
+</nav>

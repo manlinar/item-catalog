@@ -1,0 +1,65 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class="row banner menu">
+	<div class="col-md-11 col-md-offset-1 padding-none">
+		<h1>New Hotel Info</h1>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12 padding-top">
+		<form action="{{url_for('newHotelInfo', hotel_id = hotel_id, info_id = info_id)}}" method = "post">
+			<div class="form-group">
+				<label for="name">Name:</label>
+				<input type ="text" maxlength="50" class="form-control" name="name" placeholder="Name of the room">
+				<label for="description">Description:</label>
+				<textarea class="form-control" maxlength="250" rows="3" name="description" placeholder="Description of the room"></textarea>
+				<label for="price">Price:</label>
+				<div class="input-group">
+					<div class="input-group-addon">$</div>
+					<input type ="text" class="form-control" maxlength="10" name="price" placeholder="Price in $">
+				</div>
+				<label for="category">Category:</label>
+				<div class="radio">
+					<label>
+						<input type="radio" name="category" id="category1" value="Single Room">Single Room
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+						<input type="radio" name="category" id="category2" value="Double Room">Double Room
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+						<input type="radio" name="category" id="category3" value="Triple Room">Triple Room
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+						<input type="radio" name="category" id="category4" value="Four Bed Room">Four Bed Room
+					</label>
+				</div>
+				<div class="radio">
+					<label>
+						<input type="radio" name="category" id="category5" value="Suite">Suite
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-1">
+			<button type="submit" class="btn btn-default" id="submit" type="submit">
+				<strong><span class="glyphicon glyphicon-ok" aria-hidden="true"></span>Create</strong>
+			</button>
+		</div>
+	</form>
+	<div class="col-md-1">
+		<form action="{{url_for('showInfo',hotel_id=hotel_id)}}">
+			<button class="btn btn-default">
+				<strong><span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>Cancel</strong>
+			</button>
+		</form>
+	</div>
+	<div class="col-md-12 padding-top"></div>
+</div>
+{% endblock %}
